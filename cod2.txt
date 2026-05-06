@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Proposta Exclã Soluções</title>
+    <style>
+        body { font-family: Segoe UI, Verdana; background: #f5f5f5; padding: 20px; }
+        .page { 
+            width: 21cm; 
+            height: 29.7cm; 
+            margin: 20px auto; 
+            background: white; 
+            border-left: 8px solid #2d5016; 
+            border-right: 8px solid #2d5016;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .header { 
+            padding: 35px 45px 15px;
+            text-align: center;
+            border-bottom: 3px solid #2d5016;
+            background: linear-gradient(to bottom, #fff, #f9faf7);
+        }
+        .logo { font-size: 28px; font-weight: bold; color: #2d5016; }
+        .logo span { color: #4a7c2e; }
+        .header-info { padding: 20px 45px; font-size: 11px; line-height: 1.8; color: #666; }
+        .header-info strong { color: #2d5016; }
+        .content { 
+            padding: 40px 45px; 
+            font-size: 11px; 
+            line-height: 1.65;
+            flex-grow: 1;
+        }
+        h1 { 
+            color: #2d5016; 
+            font-size: 13px; 
+            margin: 25px 0 12px 0; 
+            border-bottom: 2px solid #2d5016; 
+            padding-bottom: 6px;
+        }
+        h2 { color: #4a7c2e; font-size: 11px; margin: 18px 0 8px 0; }
+        h3 { color: #333; font-size: 11px; margin: 12px 0 6px 0; }
+        p { margin-bottom: 8px; text-align: justify; }
+        ul { margin-left: 18px; margin-bottom: 8px; }
+        li { margin-bottom: 5px; color: #555; }
+        .destaque {
+            background: #f0f5eb;
+            padding: 12px 15px;
+            border-left: 4px solid #2d5016;
+            margin: 12px 0;
+            font-size: 11px;
+        }
+        .destaque strong { color: #2d5016; }
+        table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 10px; }
+        th { background: #2d5016; color: white; padding: 8px; text-align: left; }
+        td { padding: 7px 8px; border-bottom: 1px solid #ddd; }
+        tr:nth-child(even) { background: #fafafa; }
+        .footer {
+            border-top: 3px solid #2d5016;
+            padding: 12px 45px;
+            font-size: 9px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            background: #f0f5eb;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <div class="header">
+        <div class="logo">🛡️ Exclã <span>Soluções</span></div>
+    </div>
+    
+    <div class="header-info">
+        <strong>Londrina, 05 de maio de 2026</strong><br><br>
+        <strong>À</strong><br>
+        JEANIE<br>
+        <strong>Assunto:</strong> Proposta - Gestão Financeira de Eventos (Excel e Sistema Web)
+    </div>
+    
+    <div class="content">
+        <p><strong>Prezada Jeanie,</strong></p>
+        <p>Conforme solicitado, apresento proposta para desenvolvimento de solução de gestão financeira de eventos, com foco em análise de lucratividade (DRE) por evento e controle do funil de negociações.</p>
+        
+        <p>Apresento <strong>duas alternativas:</strong></p>
+        <ul>
+            <li><strong>Opção A:</strong> Excel Avançado (Formulário + Dashboard)</li>
+            <li><strong>Opção B:</strong> Plataforma Cloud (Sistema Web) ⭐ <strong>RECOMENDADA</strong></li>
+        </ul>
+        
+        <h1>1. CONTEXTO IDENTIFICADO</h1>
+        <ul>
+            <li>Gestão atual com planilhas extensas e múltiplas versões circulando</li>
+            <li>Campos principais: eventos, categorias (receitas/despesas), funil, contratos, DRE</li>
+            <li>Necessidade de análises estruturadas para apresentação à diretoria</li>
+            <li><strong>Urgência</strong> destacada</li>
+            <li>Demanda por <strong>acesso mobile</strong></li>
+            <li>Necessidade de <strong>governança em tempo real</strong></li>
+        </ul>
+        
+        <h1>2. OPÇÃO A — EXCEL AVANÇADO</h1>
+        <h2>Escopo:</h2>
+        <ul>
+            <li><strong>Base de Dados:</strong> Reorganização estruturada com tabelas de apoio</li>
+            <li><strong>Formulário Diário:</strong> UserForm com validações e log automático</li>
+            <li><strong>Dashboard:</strong> Análises por evento, contrato, período com tabelas dinâmicas</li>
+            <li><strong>Ribbon:</strong> Botões customizados para fácil navegação</li>
+        </ul>
+        
+        <h2>Benefícios:</h2>
+        <ul>
+            <li>✓ Aproveitamento do Excel (familiar)</li>
+            <li>✓ Baixo custo</li>
+            <li>✓ Redução de erros</li>
+            <li>✓ Painel gerencial consolidado</li>
+        </ul>
+        
+        <div class="destaque">
+            <strong>Prazo:</strong> 40 dias úteis (8 semanas)<br>
+            <strong>Investimento:</strong> R$ 8.000,00 (50% à vista | 50% na entrega)<br>
+            <strong>Entregáveis:</strong> Arquivo Excel, treinamento (2h), documentação
+        </div>
+        
+        <h1>3. OPÇÃO B — SISTEMA WEB ⭐ RECOMENDADA</h1>
+        <h2>Escopo:</h2>
+        <ul>
+            <li><strong>Aplicativo Web:</strong> Integrado com BD relacional (PostgreSQL/SQL)</li>
+            <li><strong>Formulário Web:</strong> Acessível mobile, validações em tempo real, login/senha</li>
+            <li><strong>Dashboard:</strong> Interativo, atualização em tempo real, exportação Excel/PDF</li>
+            <li><strong>Segurança:</strong> Criptografia TLS 1.3, AES-256, MFA, backup 24/7, LGPD compliant</li>
+        </ul>
+        
+        <h2>Benefícios:</h2>
+        <ul>
+            <li>✓ Acesso via navegador (sem instalações)</li>
+            <li>✓ Mobilidade total (celular, tablet, PC)</li>
+            <li>✓ Multiusuário com permissões</li>
+            <li>✓ Dados atualizados em tempo real</li>
+            <li>✓ Única fonte de verdade (sem versões duplicadas)</li>
+            <li>✓ Segurança profissional + LGPD</li>
+            <li>✓ Escalável</li>
+        </ul>
+        
+        <h2>Suporte Mensal (escolha um):</h2>
+        <div class="destaque">
+            <strong>Essencial:</strong> R$ 350/mês (3 chamados, resposta 1 dia)<br>
+            <strong>Plus:</strong> R$ 690/mês (9 chamados, resposta 6h) ⭐<br>
+            <strong>Pro:</strong> R$ 990/mês (15 chamados, resposta 2h + reunião)<br>
+            <em>Inclui: hospedagem + backup + monitoramento 24/7</em>
+        </div>
+        
+        <div class="destaque">
+            <strong>Prazo:</strong> Até 8 semanas após kickoff<br>
+            <strong>Investimento (desenvolvimento):</strong> R$ 12.000,00 (50% à vista | 50% na entrega)
+        </div>
+        
+        <h1>4. COMPARAÇÃO RÁPIDA</h1>
+        <table>
+            <tr>
+                <th>Aspecto</th>
+                <th>Excel</th>
+                <th>Sistema Web</th>
+            </tr>
+            <tr>
+                <td><strong>Investimento</strong></td>
+                <td>R$ 8.000</td>
+                <td>R$ 12.000</td>
+            </tr>
+            <tr>
+                <td><strong>Prazo</strong></td>
+                <td>8 semanas</td>
+                <td>8 semanas ⭐</td>
+            </tr>
+            <tr>
+                <td><strong>Celular</strong></td>
+                <td>❌ Difícil</td>
+                <td>✅ Fácil</td>
+            </tr>
+            <tr>
+                <td><strong>Múltiplos usuários</strong></td>
+                <td>⚠️ Limitado</td>
+                <td>✅ Ilimitado</td>
+            </tr>
+            <tr>
+                <td><strong>Versões duplicadas</strong></td>
+                <td>⚠️ Frequente</td>
+                <td>✅ Nenhuma</td>
+            </tr>
+            <tr>
+                <td><strong>Custo mensal</strong></td>
+                <td>R$ 0</td>
+                <td>R$ 350-990</td>
+            </tr>
+            <tr>
+                <td><strong>Receita 1 ano</strong></td>
+                <td><strong>R$ 8.000</strong></td>
+                <td><strong>R$ 16.200-23.880</strong></td>
+            </tr>
+        </table>
+        
+        <h1>5. RECOMENDAÇÃO: OPÇÃO B (SISTEMA WEB) ⭐</h1>
+        <p>Considerando sua <strong>urgência</strong> e a <strong>necessidade de profissionalismo</strong>, recomendo <strong>fortemente a Opção B.</strong> Atende prazo, oferece mobilidade, segurança e governança que sua diretoria merece.</p>
+        
+        <h1>6. PRÓXIMOS PASSOS</h1>
+        <ul>
+            <li><strong>1.</strong> Você escolhe A ou B (e-mail/WhatsApp)</li>
+            <li><strong>2.</strong> Enviamos contrato de serviço (com LGPD/DPA/SLA)</li>
+            <li><strong>3.</strong> Você assina contrato</li>
+            <li><strong>4.</strong> Você envia 50% (dados bancários fornecidos)</li>
+            <li><strong>5.</strong> Kickoff agendado em 48h após pagamento</li>
+            <li><strong>6.</strong> Desenvolvimento começa (primeira demo semana 2)</li>
+        </ul>
+        
+        <h1>7. OBSERVAÇÕES IMPORTANTES</h1>
+        <div class="destaque">
+            ✓ Proposta válida por <strong>7 dias</strong> (até 12/05/2026)<br>
+            ✓ <strong>Contrato de Serviço será enviado após aprovação</strong> (com LGPD, DPA, SLA)<br>
+            ✓ Informações do kickoff são requisitos obrigatórios<br>
+            ✓ Mudanças no escopo serão cobradas separadamente
+        </div>
+        
+        <h1>8. CONTATO</h1>
+        <p>Qualquer dúvida, estarei disponível!</p>
+        <p style="margin-top: 20px;"><strong>Atenciosamente,</strong><br><br>
+            <strong>Daniely Pinheiro | Roseane Crispim</strong><br>
+            Exclã Soluções<br><br>
+            📧 E-mail: danielypinheiro@exclasolucoes.com.br<br>
+            📱 Telefone: [ADICIONE]<br>
+            🏢 CNPJ: [ADICIONE]
+        </p>
+    </div>
+    
+    <div class="footer">
+        <div>Classificação da informação: Uso Interno | 41 98842-7128 / 44 99982-6967</div>
+        <div>Página <strong style="color: #2d5016;">1</strong></div>
+    </div>
+</div>
+
+</body>
+</html>

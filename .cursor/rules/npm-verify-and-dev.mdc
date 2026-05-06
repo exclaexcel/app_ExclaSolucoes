@@ -1,0 +1,13 @@
+---
+description: Após alterações no app Next.js, validar build e subir o dev server
+alwaysApply: true
+---
+
+# NPM — build e dev
+
+Quando houver mudanças relevantes neste projeto (código, dependências, config):
+
+1. Rodar `npm run build` e confirmar que conclui com sucesso (**exit code 0**).
+2. Rodar `npm run dev` (em segundo plano se a sessão for longa) para o usuário poder validar em `http://localhost:3000`.
+
+Informar o usuário de forma breve o resultado do build (sucesso com exit code 0) e que o dev server está disponível.

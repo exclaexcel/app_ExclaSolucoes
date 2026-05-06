@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contrato de Serviço - Exclã Soluções</title>
+    <style>
+        body { font-family: Segoe UI, Verdana; background: #f5f5f5; padding: 20px; }
+        .page { 
+            width: 21cm; 
+            height: 29.7cm; 
+            margin: 20px auto; 
+            background: white; 
+            border-left: 8px solid #2d5016; 
+            border-right: 8px solid #2d5016;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .header { 
+            padding: 35px 45px 15px;
+            text-align: center;
+            border-bottom: 3px solid #2d5016;
+            background: linear-gradient(to bottom, #fff, #f9faf7);
+        }
+        .logo { font-size: 28px; font-weight: bold; color: #2d5016; }
+        .logo span { color: #4a7c2e; }
+        .header-info { padding: 20px 45px; font-size: 11px; line-height: 1.8; color: #666; }
+        .header-info strong { color: #2d5016; }
+        .content { 
+            padding: 40px 45px; 
+            font-size: 10px; 
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        h1 { 
+            color: #2d5016; 
+            font-size: 13px; 
+            margin: 20px 0 10px 0; 
+            border-bottom: 2px solid #2d5016; 
+            padding-bottom: 5px;
+        }
+        h2 { color: #4a7c2e; font-size: 11px; margin: 15px 0 8px 0; }
+        p { margin-bottom: 8px; text-align: justify; line-height: 1.6; }
+        ul { margin-left: 18px; margin-bottom: 8px; }
+        li { margin-bottom: 4px; color: #555; }
+        .destaque {
+            background: #f0f5eb;
+            padding: 10px 12px;
+            border-left: 4px solid #2d5016;
+            margin: 10px 0;
+            font-size: 10px;
+        }
+        .destaque strong { color: #2d5016; }
+        .assinatura { margin-top: 30px; display: flex; justify-content: space-between; }
+        .assinatura-box { width: 45%; text-align: center; }
+        .assinatura-linha { border-top: 1px solid #333; margin-bottom: 5px; height: 40px; }
+        .footer {
+            border-top: 3px solid #2d5016;
+            padding: 10px 45px;
+            font-size: 9px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            background: #f0f5eb;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <div class="header">
+        <div class="logo">🛡️ Exclã <span>Soluções</span></div>
+    </div>
+    
+    <div class="header-info">
+        <strong>Londrina, 05 de maio de 2026</strong><br><br>
+        <strong>CONTRATO DE SERVIÇO</strong><br>
+        <strong>Sistema de Gestão Financeira de Eventos</strong>
+    </div>
+    
+    <div class="content">
+        <p style="text-align: center; margin: 15px 0;"><strong>TERMO DE SERVIÇO E ACORDO DE PRESTAÇÃO</strong></p>
+        
+        <h1>1. PARTES CONTRATANTES</h1>
+        <p><strong>PRESTADORA:</strong> Exclã Soluções (Daniely Pinheiro | Roseane Crispim)</p>
+        <p><strong>CLIENTE:</strong> [NOME DO CLIENTE]</p>
+        
+        <h1>2. OBJETO DO CONTRATO</h1>
+        <p>Prestação de serviço de desenvolvimento e manutenção de aplicativo web para gestão financeira de eventos, incluindo:</p>
+        <ul>
+            <li>Desenvolvimento de plataforma cloud com acesso via navegador</li>
+            <li>Cadastro de eventos, categorias, negociações e contratos</li>
+            <li>Dashboard analítico com DRE por evento</li>
+            <li>Suporte técnico mensal conforme plano contratado</li>
+            <li>Hospedagem, backup e monitoramento</li>
+        </ul>
+        
+        <h1>3. INVESTIMENTO E PAGAMENTO</h1>
+        <h2>Desenvolvimento:</h2>
+        <p><strong>Valor Total: R$ 12.000,00</strong></p>
+        <ul>
+            <li>50% (R$ 6.000) no aceite desta proposta</li>
+            <li>50% (R$ 6.000) na entrega do MVP</li>
+        </ul>
+        
+        <h2>Suporte Mensal (escolha um plano):</h2>
+        <ul>
+            <li><strong>Essencial:</strong> R$ 350/mês (3 chamados, resposta 1 dia)</li>
+            <li><strong>Plus:</strong> R$ 690/mês (9 chamados, resposta 6h)</li>
+            <li><strong>Pro:</strong> R$ 990/mês (15 chamados, resposta 2h + reunião mensal)</li>
+        </ul>
+        
+        <h1>4. PROPRIEDADE INTELECTUAL</h1>
+        <p><strong>A Exclã Soluções retém:</strong></p>
+        <ul>
+            <li>Propriedade do código-fonte e sistema completo</li>
+            <li>Direito de usar bibliotecas, frameworks e componentes reutilizáveis</li>
+            <li>Direito de usar como case de sucesso (respeitando confidencialidade)</li>
+        </ul>
+        
+        <p><strong>O Cliente tem direito a:</strong></p>
+        <ul>
+            <li>Usar o sistema pelo prazo do contrato</li>
+            <li>Acesso exclusivo aos seus dados</li>
+            <li>Dados armazenados permanecem do cliente</li>
+        </ul>
+        
+        <h1>5. SEGURANÇA E CONFORMIDADE LGPD</h1>
+        <p>O sistema inclui:</p>
+        <ul>
+            <li>✓ Criptografia TLS 1.3 em trânsito</li>
+            <li>✓ Criptografia AES-256 em repouso</li>
+            <li>✓ Autenticação com MFA (dois fatores)</li>
+            <li>✓ Backup automatizado diário</li>
+            <li>✓ Monitoramento 24/7</li>
+            <li>✓ Conformidade LGPD completa</li>
+            <li>✓ Data Processing Agreement (DPA) anexado</li>
+        </ul>
+        
+        <h1>6. SLA - ACORDO DE NÍVEL DE SERVIÇO</h1>
+        <p><strong>Disponibilidade:</strong> 99,5% ao mês (máximo 3,6h offline)</p>
+        
+        <p><strong>Classificação de Chamados:</strong></p>
+        <ul>
+            <li><strong>P1 (crítico):</strong> Resposta 2h, resolução 8h</li>
+            <li><strong>P2 (alta):</strong> Resposta 6h, resolução 24h</li>
+            <li><strong>P3 (média):</strong> Resposta 1 dia, resolução 3 dias</li>
+            <li><strong>P4 (baixa):</strong> Resposta 3 dias, resolução 7 dias</li>
+        </ul>
+        
+        <p><strong>Exceções:</strong> Manutenção programada, ataques DDoS, indisponibilidade do cloud provider, ações do próprio cliente</p>
+        
+        <h1>7. RESPONSABILIDADE</h1>
+        <p><strong>A Exclã Soluções NÃO responde por:</strong></p>
+        <ul>
+            <li>Perda de dados se cliente não faz backup pessoal</li>
+            <li>Ataques hackers ou DDoS volumétricos</li>
+            <li>Problemas do cloud provider terceiro</li>
+            <li>Uso incorreto do sistema</li>
+            <li>Danos indiretos ou lucros cessantes</li>
+        </ul>
+        
+        <p><strong>Responsabilidade máxima:</strong> Limitada ao valor pago nos últimos 12 meses</p>
+        
+        <h1>8. CONFIDENCIALIDADE</h1>
+        <p>Ambas as partes comprometem-se a manter em sigilo:</p>
+        <ul>
+            <li>Detalhes técnicos do sistema</li>
+            <li>Dados sensíveis dos eventos</li>
+            <li>Estrutura financeira e negócios</li>
+            <li>Duração: 5 anos após término do contrato</li>
+        </ul>
+        
+        <h1>9. DURAÇÃO E CANCELAMENTO</h1>
+        <p><strong>Período de Desenvolvimento:</strong> Até 8 semanas após kickoff</p>
+        
+        <p><strong>Suporte Mensal:</strong> Mês a mês, cancelável com 10 dias de aviso prévio</p>
+        
+        <p><strong>Em caso de cancelamento:</strong> Cliente fica com acesso aos dados e pode solicitar exportação</p>
+        
+        <h1>10. KICKOFF E INÍCIO</h1>
+        <ul>
+            <li>Kickoff agendado em até 48h após confirmação de pagamento</li>
+            <li>Desenvolvimento começa imediatamente após kickoff</li>
+            <li>Primeira demonstração na semana 2</li>
+        </ul>
+        
+        <h1>11. OBSERVAÇÕES FINAIS</h1>
+        <div class="destaque">
+            ✓ Este contrato representa acordo de confidencialidade, segurança e prestação de serviço conforme Lei 9.609/98 e LGPD<br>
+            ✓ Ambas as partes concordam com os termos acima<br>
+            ✓ Mudanças após assinatura requerem aditivo formal
+        </div>
+        
+        <h1 style="border: none; margin-top: 40px; font-size: 12px;">ASSINATURA DAS PARTES</h1>
+        
+        <div class="assinatura">
+            <div class="assinatura-box">
+                <p style="font-weight: bold; margin-bottom: 5px;">CLIENTE</p>
+                <div class="assinatura-linha"></div>
+                <p style="font-size: 9px; margin-bottom: 15px;">Assinatura e data</p>
+                <p style="font-size: 9px;">_______________________<br>Nome completo</p>
+            </div>
+            
+            <div class="assinatura-box">
+                <p style="font-weight: bold; margin-bottom: 5px;">EXCLÃ SOLUÇÕES</p>
+                <div class="assinatura-linha"></div>
+                <p style="font-size: 9px; margin-bottom: 15px;">Assinatura e data</p>
+                <p style="font-size: 9px;">_______________________<br>Daniely Pinheiro</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div>Classificação da informação: Uso Interno | 41 98842-7128 / 44 99982-6967</div>
+        <div>Página <strong style="color: #2d5016;">1</strong></div>
+    </div>
+</div>
+
+</body>
+</html>

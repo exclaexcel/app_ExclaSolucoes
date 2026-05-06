@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+  .font-body { font-family: 'Montserrat', sans-serif; }
+  
+  /* Paleta Exclã Soluções */
+  .text-excla-dark { color: #0b3b17; } /* Verde Escuro do Escudo */
+  .text-excla-green { color: #157332; } /* Verde Vibrante 3D */
+  .bg-excla-offwhite { background-color: #fafafa; } /* Fundo quase branco (off-white) */
+  .border-excla-dark { border-color: #0b3b17; }
+  .border-excla-green { border-color: #157332; }
+</style>
+</head>
+<body class="bg-excla-offwhite py-10">
+
+<div class="max-w-4xl mx-auto p-10 font-body text-gray-700 bg-white shadow-md border-t-4 border-excla-green">
+  
+  <header class="mb-10 border-b border-gray-200 pb-6 text-center">
+    <h1 class="text-3xl font-bold text-excla-dark uppercase tracking-wider">Anexo A - Acordo de Tratamento de Dados (DPA - LGPD)</h1>
+    <p class="text-sm text-excla-green font-bold mt-2 tracking-widest uppercase">Ref: Sistema de Gestão Financeira de Eventos</p>
+  </header>
+
+  <section class="mb-8 leading-relaxed text-justify">
+    <p>Este documento faz parte do Contrato de Desenvolvimento de Software assinado entre <strong class="text-excla-dark">[NOME DA EMPRESA DA JEANIE]</strong> (doravante "Controlador") e <strong class="text-excla-dark">Exclã Soluções</strong> (doravante "Operador").</p>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-xl font-bold text-excla-dark mb-4 border-l-4 border-excla-green pl-3">1. Quem é quem na LGPD?</h2>
+    <p class="mb-3 leading-relaxed">Para ficarmos dentro da lei (LGPD - Lei nº 13.709/2018), nossos papéis são claros:</p>
+    <ul class="space-y-3 pl-4">
+      <li class="flex items-start">
+        <span class="text-excla-green mr-2 font-bold">✓</span>
+        <span><strong class="text-excla-dark font-semibold">O Cliente (Controlador):</strong> É o dono do negócio. Você decide quais dados (nomes de clientes, telefones, e-mails, dados financeiros) serão inseridos no sistema e para qual finalidade.</span>
+      </li>
+      <li class="flex items-start">
+        <span class="text-excla-green mr-2 font-bold">✓</span>
+        <span><strong class="text-excla-dark font-semibold">Exclã Soluções (Operador):</strong> Somos a tecnologia. Nós apenas armazenamos e processamos esses dados seguindo estritamente as suas orientações para fazer o sistema funcionar. Não usamos esses dados para mais nada.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-xl font-bold text-excla-dark mb-4 border-l-4 border-excla-green pl-3">2. O que vamos fazer com os dados?</h2>
+    <p class="mb-3 leading-relaxed">A Exclã Soluções se compromete a tratar os dados pessoais inseridos no sistema <strong>exclusivamente</strong> para a execução do Contrato principal (hospedagem, manutenção e funcionamento do Sistema de Gestão Financeira de Eventos).</p>
+    <ul class="space-y-2 pl-4">
+      <li class="flex items-center"><span class="text-red-500 mr-2 font-bold">✕</span> Não venderemos, não alugaremos e não compartilharemos esses dados com terceiros.</li>
+      <li class="flex items-center"><span class="text-red-500 mr-2 font-bold">✕</span> Não usaremos os dados dos seus clientes para campanhas de marketing da Exclã.</li>
+    </ul>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-xl font-bold text-excla-dark mb-4 border-l-4 border-excla-green pl-3">3. Como protegemos os dados?</h2>
+    <p class="mb-3 leading-relaxed">Adotamos medidas de segurança de alto nível para proteger as informações que estão no nosso sistema contra acessos não autorizados, perdas ou vazamentos:</p>
+    <ul class="space-y-3 pl-4">
+      <li class="flex items-start"><span class="text-excla-green mr-2 font-bold">✓</span> Criptografia de dados em trânsito (TLS 1.3) e em repouso (AES-256).</li>
+      <li class="flex items-start"><span class="text-excla-green mr-2 font-bold">✓</span> Rotinas de backup automático diário.</li>
+      <li class="flex items-start"><span class="text-excla-green mr-2 font-bold">✓</span> Controle restrito de acesso à infraestrutura (apenas desenvolvedores autorizados da Exclã Soluções têm acesso aos servidores para manutenção).</li>
+    </ul>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-xl font-bold text-excla-dark mb-4 border-l-4 border-excla-green pl-3">4. E se algo der errado? (Incidentes)</h2>
+    <p class="mb-3 leading-relaxed">Se identificarmos qualquer incidente de segurança (como um vazamento de dados, ataque hacker ou acesso indevido ao banco de dados), a Exclã Soluções notificará o Cliente por e-mail no prazo máximo de <strong class="text-excla-dark">48 horas úteis</strong> após a confirmação do problema, informando:</p>
+    <ul class="space-y-3 pl-4">
+      <li class="flex items-start"><span class="text-excla-green mr-2 font-bold">✓</span> O que aconteceu e quais dados foram afetados.</li>
+      <li class="flex items-start"><span class="text-excla-green mr-2 font-bold">✓</span> O que já estamos fazendo para resolver e mitigar os riscos.</li>
+    </ul>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-xl font-bold text-excla-dark mb-4 border-l-4 border-excla-green pl-3">5. Direitos das pessoas (Titulares)</h2>
+    <p class="mb-3 leading-relaxed">Se um cliente seu pedir para ver quais dados vocês têm dele ou pedir para apagar tudo (direito de exclusão da LGPD):</p>
+    <ul class="space-y-3 pl-4">
+      <li class="flex items-start"><span class="text-excla-green mr-2 font-bold">✓</span> Você (Controlador) é responsável por atender ao pedido.</li>
+      <li class="flex items-start"><span class="text-excla-green mr-2 font-bold">✓</span> Nós (Operador) forneceremos as ferramentas no sistema para que você consiga exportar ou excluir esses dados facilmente.</li>
+    </ul>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-xl font-bold text-excla-dark mb-4 border-l-4 border-excla-green pl-3">6. Fim do contrato: O que acontece?</h2>
+    <ol class="list-decimal pl-8 space-y-3 leading-relaxed text-justify">
+      <li>A Exclã Soluções entregará a você um arquivo completo com todos os seus dados (exportação do banco de dados).</li>
+      <li>Após a entrega e confirmação de recebimento, <strong class="text-excla-dark">apagaremos definitivamente</strong> todos os dados pessoais dos nossos servidores num prazo máximo de 30 dias.</li>
+    </ol>
+  </section>
+
+  <footer class="mt-12 pt-10 border-t-2 border-gray-100">
+    <h3 class="text-2xl font-bold text-excla-dark mb-8 uppercase text-center">Assinaturas</h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-sm">
+      <div class="space-y-6">
+        <p class="font-bold text-excla-dark uppercase tracking-wider border-b-2 border-excla-green pb-2 inline-block">Cliente (Controlador)</p>
+        <p><span class="text-gray-500 font-semibold">Nome/Empresa:</span> <br><span class="block mt-1 border-b border-gray-300 w-full h-5"></span></p>
+        <p><span class="text-gray-500 font-semibold">Data:</span> <br><span class="block mt-1 border-b border-gray-300 w-full h-5"></span></p>
+        <p><span class="text-gray-500 font-semibold">Assinatura:</span> <br><span class="block mt-1 border-b border-gray-300 w-full h-5"></span></p>
+      </div>
+      
+      <div class="space-y-6">
+        <p class="font-bold text-excla-dark uppercase tracking-wider border-b-2 border-excla-green pb-2 inline-block">Exclã Soluções (Operador)</p>
+        <p><span class="text-gray-500 font-semibold">Representantes:</span> <br><span class="block mt-1 text-excla-dark font-bold">Daniely Pinheiro / Roseane Crispim</span></p>
+        <p><span class="text-gray-500 font-semibold">Data:</span> <br><span class="block mt-1 text-excla-dark font-bold">05/05/2026</span></p>
+        <p><span class="text-gray-500 font-semibold">Assinatura:</span> <br><span class="block mt-1 border-b border-gray-300 w-full h-5"></span></p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
