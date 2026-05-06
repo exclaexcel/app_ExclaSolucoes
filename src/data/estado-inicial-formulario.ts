@@ -31,6 +31,14 @@ export type DocumentosFormularioEstado = {
   contratoValorTotal: string;
   contratoParcela1: string;
   contratoParcela2: string;
+  /** DPA — nome do Controlador (pode ser empresa); usado no texto jurídico */
+  nomeControladorDpa: string;
+  /** DPA — referência do sistema/processo no cabeçalho */
+  referenciaSistemaDpa: string;
+  /** DPA — data no quadro Exclã Soluções (Operador) */
+  dataAssinaturaOperadorDpa: string;
+  /** DPA — representantes pré-preenchidos no quadro operadora */
+  representantesExclaDpa: string;
 };
 
 export const estadoInicialFormulario: DocumentosFormularioEstado = {
@@ -60,4 +68,8 @@ export const estadoInicialFormulario: DocumentosFormularioEstado = {
   contratoValorTotal: "R$ 12.000,00",
   contratoParcela1: "50% (R$ 6.000) no aceite desta proposta",
   contratoParcela2: "50% (R$ 6.000) na entrega do MVP",
+  nomeControladorDpa: "JEANIE",
+  referenciaSistemaDpa: "Sistema de Gestão Financeira de Eventos",
+  dataAssinaturaOperadorDpa: "05/05/2026",
+  representantesExclaDpa: "Daniely Pinheiro / Roseane Crispim",
 };

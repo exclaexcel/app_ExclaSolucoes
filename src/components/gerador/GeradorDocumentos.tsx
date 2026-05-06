@@ -1,6 +1,7 @@
 "use client";
 
 import { ContratoTemplate } from "@/components/documentos/ContratoTemplate";
+import { DpaTemplate } from "@/components/documentos/DpaTemplate";
 import { PropostaTemplate } from "@/components/documentos/PropostaTemplate";
 import {
   estadoInicialFormulario,
@@ -9,6 +10,7 @@ import {
 } from "@/data/estado-inicial-formulario";
 import {
   montarContratoDesdeFormulario,
+  montarDpaDesdeFormulario,
   montarPropostaDesdeFormulario,
 } from "@/lib/build-documentos-desde-formulario";
 import type { InputHTMLAttributes } from "react";
@@ -87,6 +89,7 @@ export function GeradorDocumentos() {
 
   const dadosProposta = useMemo(() => montarPropostaDesdeFormulario(f), [f]);
   const dadosContrato = useMemo(() => montarContratoDesdeFormulario(f), [f]);
+  const dadosDpa = useMemo(() => montarDpaDesdeFormulario(f), [f]);
 
   return (
     <main className="min-h-screen bg-excla-offwhite py-10">
@@ -96,9 +99,9 @@ export function GeradorDocumentos() {
             Gerador de documentos
           </h1>
           <p className="mt-2 max-w-2xl text-sm text-gray-600">
-            Preencha os campos abaixo; a proposta e o contrato são atualizados na hora.
-            Conteúdo jurídico amplo permanece o do modelo base — você ajusta dados do
-            cliente e valores.
+            Preencha os campos abaixo; a proposta, o contrato e o Anexo A (DPA/LGPD) são
+            atualizados na hora. Conteúdo jurídico amplo permanece o do modelo base —
+            você ajusta dados do cliente e valores.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <button
@@ -299,6 +302,38 @@ export function GeradorDocumentos() {
               />
             </div>
           </section>
+
+          <section className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <h2 className="mb-4 font-serif text-lg font-semibold text-excla-dark">
+              Anexo A — DPA (LGPD)
+            </h2>
+            <div className="grid gap-4">
+              <Campo
+                label="Controlador — nome / empresa (texto do acordo)"
+                id="ncDpa"
+                value={f.nomeControladorDpa}
+                onChange={(v) => patch("nomeControladorDpa", v)}
+              />
+              <Campo
+                label="Referência do sistema (cabeçalho e item 2)"
+                id="refDpa"
+                value={f.referenciaSistemaDpa}
+                onChange={(v) => patch("referenciaSistemaDpa", v)}
+              />
+              <Campo
+                label="Data no bloco Exclã (operador)"
+                id="dtDpa"
+                value={f.dataAssinaturaOperadorDpa}
+                onChange={(v) => patch("dataAssinaturaOperadorDpa", v)}
+              />
+              <Campo
+                label="Representantes (operador)"
+                id="repDpa"
+                value={f.representantesExclaDpa}
+                onChange={(v) => patch("representantesExclaDpa", v)}
+              />
+            </div>
+          </section>
         </div>
 
         <div className="border-t border-gray-200 pt-10">
@@ -308,6 +343,7 @@ export function GeradorDocumentos() {
           <div className="flex flex-col gap-16 pb-24">
             <PropostaTemplate data={dadosProposta} />
             <ContratoTemplate data={dadosContrato} />
+            <DpaTemplate data={dadosDpa} />
           </div>
         </div>
       </div>

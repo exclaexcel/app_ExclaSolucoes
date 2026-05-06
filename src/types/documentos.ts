@@ -147,3 +147,13 @@ export type ContratoDocumentData = {
   rodapeClassificacao: string;
   paginaAtual: number;
 };
+
+/** Anexo A — Acordo de Tratamento de Dados (DPA) conforme LGPD */
+export type DpaDocumentData = {
+  nomeControlador: string;
+  referenciaSistema: string;
+  dataAssinaturaOperador: string;
+  representantesOperador: string;
+  rodapeClassificacao: string;
+  paginaAtual: number;
+};

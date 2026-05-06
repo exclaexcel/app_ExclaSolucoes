@@ -1,4 +1,4 @@
-import type { ContratoDocumentData, PropostaDocumentData } from "@/types/documentos";
+import type { ContratoDocumentData, DpaDocumentData, PropostaDocumentData } from "@/types/documentos";
 import type { DocumentosFormularioEstado } from "@/data/estado-inicial-formulario";
 import { exemploContrato, exemploProposta } from "@/data/exemplo-documentos";
 
@@ -99,5 +99,18 @@ export function montarContratoDesdeFormulario(
         rodapeNome: f.nomeClienteDestinatario,
       },
     },
+  };
+}
+
+export function montarDpaDesdeFormulario(
+  f: DocumentosFormularioEstado,
+): DpaDocumentData {
+  return {
+    nomeControlador: f.nomeControladorDpa,
+    referenciaSistema: f.referenciaSistemaDpa,
+    dataAssinaturaOperador: f.dataAssinaturaOperadorDpa,
+    representantesOperador: f.representantesExclaDpa,
+    rodapeClassificacao: exemploProposta.rodapeClassificacao,
+    paginaAtual: 1,
   };
 }
