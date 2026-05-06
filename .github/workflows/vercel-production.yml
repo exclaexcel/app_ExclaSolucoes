@@ -1,4 +1,6 @@
 # Deploy para o projeto Vercel em cada push em `main`.
+# Se o mesmo repo já estiver ligado na Vercel (Git → auto-deploy), podes acabar com
+# dois deploys por push: desativa um dos lados ou remove este workflow.
 # Secrets no repositório (Settings → Secrets → Actions):
 #   VERCEL_TOKEN      — https://vercel.com/account/tokens
 #   VERCEL_ORG_ID     — Team/Account ID em Vercel → Project → Settings → General
