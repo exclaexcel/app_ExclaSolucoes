@@ -10,6 +10,14 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+concurrency:
+  group: vercel-production-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 env:
   VERCEL_PROJECT_ID: prj_oUoRRIehKvuEVeaYdSj1zxH6iLkm
@@ -21,6 +29,15 @@ jobs:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Exigir secrets VERCEL_TOKEN e VERCEL_ORG_ID
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          if [ -z "${VERCEL_TOKEN:-}" ] || [ -z "${VERCEL_ORG_ID:-}" ]; then
+            echo "::error::Defina os secrets VERCEL_TOKEN e VERCEL_ORG_ID em GitHub → Settings → Secrets and variables → Actions. Opcional: ./scripts/configure-vercel-github-secrets.sh na tua máquina."
+            exit 1
+          fi
 
       - uses: actions/setup-node@v4
         with:
