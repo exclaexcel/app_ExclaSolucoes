@@ -15,8 +15,7 @@ const config: Config = {
       fontFamily: {
         serif: ["var(--font-cormorant)", "Georgia", "serif"],
         sans: [
-          "var(--font-carlito)",
-          "Source Sans 3",
+          "var(--font-montserrat)",
           "Segoe UI",
           "system-ui",
           "sans-serif",
