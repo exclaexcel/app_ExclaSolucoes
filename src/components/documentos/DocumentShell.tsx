@@ -1,7 +1,7 @@
 /* Documentos: PNGs locais servidos sem pipeline de otimização (evita 500 no dev/Windows). */
 /* eslint-disable @next/next/no-img-element */
 
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 export type DocumentShellProps = {
   headerInfo: ReactNode;
@@ -14,7 +14,7 @@ export type DocumentShellProps = {
   logoAlt?: string;
   /** Escudo / arte só de marca d'água. `null` desliga. `undefined` = `/marca-dagua-excla.png` */
   watermarkSrc?: string | null;
-  /** Opacidade da marca d'água (0 a 1); padrão bem discreto para não competir com o texto */
+  /** Opacidade da marca d'água (0 a 1); meio escudo ao centro-direita */
   watermarkOpacity?: number;
   /** Proposta usava py-3 (12px); contrato py-[10px] — valores originais do HTML */
   footerPaddingClass?: string;
@@ -23,12 +23,47 @@ export type DocumentShellProps = {
 /** Caminho padrão: escudo (só imagem), independente do logo do cabeçalho */
 const DEFAULT_WATERMARK_SRC = "/marca-dagua-excla.png";
 
+/** Altura do escudo na folha (metade fica para fora à direita) */
+const WATERMARK_IMG_CLASS =
+  "block h-[12.5cm] w-auto max-w-none object-contain object-right";
+
 function resolveWatermarkSrc(
   watermarkSrc: string | null | undefined,
 ): string | null {
   if (watermarkSrc === null) return null;
   if (watermarkSrc) return watermarkSrc;
   return DEFAULT_WATERMARK_SRC;
+}
+
+function escapeForCssUrl(value: string): string {
+  return value.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+}
+
+function WatermarkScreen({
+  src,
+  opacity,
+}: {
+  src: string;
+  opacity: number;
+}) {
+  return (
+    <div
+      className="pointer-events-none absolute inset-0 z-0 overflow-hidden print:hidden"
+      aria-hidden
+    >
+      <div
+        className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2"
+        style={{ opacity }}
+      >
+        <img
+          src={src}
+          alt=""
+          className={WATERMARK_IMG_CLASS}
+          decoding="async"
+        />
+      </div>
+    </div>
+  );
 }
 
 /**
@@ -44,45 +79,37 @@ export function DocumentShell({
   logoSrc = "/logo-excla.png",
   logoAlt = "Exclã Soluções",
   watermarkSrc,
-  watermarkOpacity = 0.08,
+  watermarkOpacity = 0.09,
   footerPaddingClass = "py-3",
 }: DocumentShellProps) {
   const resolvedWatermark = resolveWatermarkSrc(watermarkSrc);
 
+  const sheetStyle: CSSProperties = {
+    ...(timbradoImageSrc
+      ? {
+          backgroundImage: `url(${timbradoImageSrc})`,
+          backgroundSize: "100% 100%",
+          backgroundRepeat: "no-repeat",
+        }
+      : {}),
+    ...(resolvedWatermark
+      ? ({
+          ["--excla-wm-url" as string]: `url('${escapeForCssUrl(resolvedWatermark)}')`,
+          ["--excla-wm-opacity" as string]: String(watermarkOpacity),
+        } as CSSProperties)
+      : {}),
+  };
+
   return (
     <div
-      className="relative mx-auto my-5 box-border flex min-h-[29.7cm] w-[21cm] flex-col overflow-hidden border-x-[8px] border-excla-dark bg-white shadow-[0_0_15px_rgba(0,0,0,0.1)]"
-      style={
-        timbradoImageSrc
-          ? {
-              backgroundImage: `url(${timbradoImageSrc})`,
-              backgroundSize: "100% 100%",
-              backgroundRepeat: "no-repeat",
-            }
-          : undefined
-      }
+      className={`excla-document-sheet relative mx-auto my-5 box-border flex min-h-[29.7cm] w-[21cm] flex-col overflow-hidden border-x-[8px] border-excla-dark bg-white shadow-[0_0_15px_rgba(0,0,0,0.1)] print:shadow-none ${resolvedWatermark ? "excla-document-sheet--wm" : ""}`}
+      style={sheetStyle}
     >
       {resolvedWatermark ? (
-        <div
-          className="pointer-events-none absolute inset-0 z-0 select-none overflow-hidden"
-          aria-hidden
-        >
-          {/* Canto inferior direito, contido na folha A4 (sem offsets negativos). */}
-          <div
-            className="absolute bottom-[6%] right-3 max-h-[36%] w-[min(32%,9.5cm)] max-w-[9.5cm]"
-            style={{ opacity: watermarkOpacity }}
-          >
-            <img
-              src={resolvedWatermark}
-              alt=""
-              className="h-full w-full object-contain object-right object-bottom"
-              decoding="async"
-            />
-          </div>
-        </div>
+        <WatermarkScreen src={resolvedWatermark} opacity={watermarkOpacity} />
       ) : null}
 
-      <div className="relative z-[1] flex min-h-[29.7cm] flex-1 flex-col">
+      <div className="relative z-[1] flex min-h-[29.7cm] flex-1 flex-col print:shadow-none">
         <header className="relative border-b-[3px] border-excla-dark bg-gradient-to-b from-white to-[#f9faf7] px-[45px] pb-[15px] pt-[35px] text-center">
           <div className="flex justify-center">
             {logoSrc ? (
