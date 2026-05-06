@@ -1,0 +1,15 @@
+​​​Atua como um Desenvolvedor Front-end Sénior. Concluímos com sucesso a Fase 1 do nosso projeto Next.js para a Exclã Soluções. Os componentes visuais da "Proposta Comercial" e do "Contrato" já estão criados e preparados para receber props dinâmicas. Vamos agora avançar para a Fase 2.
+​O Objetivo da Fase 2:
+Criar a interface de utilização (UI) para introdução de dados e implementar a exportação do documento gerado para PDF, mantendo 100% da fidelidade visual do Tailwind CSS e das fontes institucionais.
+As tuas tarefas detalhadas:
+​Layout de Ecrã Dividido (Split-Screen): Cria a página principal (page.tsx) com um layout moderno de duas colunas. O lado esquerdo deve conter o formulário de preenchimento, e o lado direito deve ser a zona de pré-visualização (preview) em tempo real do documento (como se fosse uma folha A4 no ecrã).
+​Gestão de Estado e Formulário: Utiliza o useState (ou react-hook-form) para capturar os dados introduzidos (Nome do Cliente, Empresa, Valor Opção A, Valor Opção B, Prazos, etc.) e passa esses dados instantaneamente como props para atualizar a pré-visualização do documento no lado direito.
+​Navegação por Abas (Tabs): Adiciona botões ou abas no topo da área do formulário que me permitam alternar a pré-visualização entre a "Proposta" e o "Contrato".
+
+4. Exportação Perfeita para PDF: Cria um botão de "Exportar para PDF". Atenção: É crucial que o PDF retenha exatidão milimétrica do Tailwind, preservando as cores da marca (Verde Escuro #0b3b17 e Verde Vibrante #157332) e as fontes ('Cormorant Garamond' e 'Montserrat').
+Instrução técnica para o PDF: Recomendo que avalies usar o react-to-print (que utiliza o motor de impressão nativo do browser para gerar PDFs perfeitos a partir do CSS) ou uma combinação de html2canvas + jsPDF. Implementa a solução que garanta a melhor fidelidade do papel timbrado.
+​Por favor, gera o código da página principal e indica quais as bibliotecas extra que preciso de instalar via npm para o PDF.
+
+Split-Screen: Pede especificamente um layout onde vês o que estás a escrever ao mesmo tempo que o documento ganha forma (tal como as ferramentas profissionais de orçamentação).
+​Fidelidade do PDF: Gerar PDFs a partir de React e Tailwind pode "partir" o layout se não for usada a ferramenta certa. Ao sugerir o react-to-print ou html2canvas, obrigas o Cursor a usar bibliotecas que tiram uma "fotografia" do código HTML/Tailwind, garantindo que o PDF sai exatamente com as fontes e cores do papel timbrado da Exclã Soluções.
+​Abas (Tabs): Permite-te gerir tanto a proposta como o contrato no mesmo ecrã de forma super fluida.
