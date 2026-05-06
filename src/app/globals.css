@@ -6,34 +6,9 @@ body {
   @apply bg-excla-offwhite antialiased;
 }
 
-/* Marca d'água na impressão: repete ao longo do documento (cada folha mostra o padrão).
-   Meio vertical, à direita, metade do escudo — alinhamento com background-position. */
 @media print {
-  .excla-document-sheet--wm::before {
-    display: block;
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-image: var(--excla-wm-url);
-    background-repeat: repeat-y;
-    background-size: 14cm auto;
-    background-position: 108% 50%;
-    opacity: var(--excla-wm-opacity, 0.09);
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-
   .excla-document-sheet {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-  }
-}
-
-@media screen {
-  .excla-document-sheet--wm::before {
-    display: none !important;
-    content: none !important;
   }
 }

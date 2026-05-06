@@ -14,7 +14,7 @@ export type DocumentShellProps = {
   logoAlt?: string;
   /** Escudo / arte só de marca d'água. `null` desliga. `undefined` = `/marca-dagua-excla.png` */
   watermarkSrc?: string | null;
-  /** Opacidade da marca d'água (0 a 1); meio escudo ao centro-direita */
+  /** Opacidade da marca d'água (0 a 1) */
   watermarkOpacity?: number;
   /** Proposta usava py-3 (12px); contrato py-[10px] — valores originais do HTML */
   footerPaddingClass?: string;
@@ -23,9 +23,10 @@ export type DocumentShellProps = {
 /** Caminho padrão: escudo (só imagem), independente do logo do cabeçalho */
 const DEFAULT_WATERMARK_SRC = "/marca-dagua-excla.png";
 
-/** Altura do escudo na folha (metade fica para fora à direita) */
-const WATERMARK_IMG_CLASS =
-  "block h-[12.5cm] w-auto max-w-none object-contain object-right";
+/** Altura A4 + faixas empilhadas (marca ao meio de cada “folha” virtual) */
+const A4_H = "29.7cm";
+/** Nº máx. de folhas virtuais com marca (documentos muito longos) */
+const WATERMARK_PAGE_STRIPS = 30;
 
 function resolveWatermarkSrc(
   watermarkSrc: string | null | undefined,
@@ -35,11 +36,11 @@ function resolveWatermarkSrc(
   return DEFAULT_WATERMARK_SRC;
 }
 
-function escapeForCssUrl(value: string): string {
-  return value.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
-}
-
-function WatermarkScreen({
+/**
+ * Uma faixa = uma folha A4 de altura; o escudo fica ao meio da faixa, à direita,
+ * com metade para fora (translateX 50%), cortado pelo `overflow-hidden` da faixa.
+ */
+function WatermarkPageStrips({
   src,
   opacity,
 }: {
@@ -48,20 +49,27 @@ function WatermarkScreen({
 }) {
   return (
     <div
-      className="pointer-events-none absolute inset-0 z-0 overflow-hidden print:hidden"
+      className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
       aria-hidden
     >
-      <div
-        className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2"
-        style={{ opacity }}
-      >
-        <img
-          src={src}
-          alt=""
-          className={WATERMARK_IMG_CLASS}
-          decoding="async"
-        />
-      </div>
+      {Array.from({ length: WATERMARK_PAGE_STRIPS }, (_, i) => (
+        <div
+          key={i}
+          className="absolute left-0 right-0 overflow-hidden"
+          style={{
+            top: `calc(${A4_H} * ${i})`,
+            height: A4_H,
+          }}
+        >
+          <img
+            src={src}
+            alt=""
+            decoding="async"
+            className="absolute top-1/2 right-0 h-[12.5cm] w-auto max-w-none -translate-y-1/2 translate-x-1/2 object-contain object-right"
+            style={{ opacity }}
+          />
+        </div>
+      ))}
     </div>
   );
 }
@@ -79,7 +87,7 @@ export function DocumentShell({
   logoSrc = "/logo-excla.png",
   logoAlt = "Exclã Soluções",
   watermarkSrc,
-  watermarkOpacity = 0.09,
+  watermarkOpacity = 0.085,
   footerPaddingClass = "py-3",
 }: DocumentShellProps) {
   const resolvedWatermark = resolveWatermarkSrc(watermarkSrc);
@@ -92,21 +100,15 @@ export function DocumentShell({
           backgroundRepeat: "no-repeat",
         }
       : {}),
-    ...(resolvedWatermark
-      ? ({
-          ["--excla-wm-url" as string]: `url('${escapeForCssUrl(resolvedWatermark)}')`,
-          ["--excla-wm-opacity" as string]: String(watermarkOpacity),
-        } as CSSProperties)
-      : {}),
   };
 
   return (
     <div
-      className={`excla-document-sheet relative mx-auto my-5 box-border flex min-h-[29.7cm] w-[21cm] flex-col overflow-hidden border-x-[8px] border-excla-dark bg-white shadow-[0_0_15px_rgba(0,0,0,0.1)] print:shadow-none ${resolvedWatermark ? "excla-document-sheet--wm" : ""}`}
+      className="excla-document-sheet relative mx-auto my-5 box-border flex min-h-[29.7cm] w-[21cm] flex-col overflow-hidden border-x-[8px] border-excla-dark bg-white shadow-[0_0_15px_rgba(0,0,0,0.1)] print:shadow-none"
       style={sheetStyle}
     >
       {resolvedWatermark ? (
-        <WatermarkScreen src={resolvedWatermark} opacity={watermarkOpacity} />
+        <WatermarkPageStrips src={resolvedWatermark} opacity={watermarkOpacity} />
       ) : null}
 
       <div className="relative z-[1] flex min-h-[29.7cm] flex-1 flex-col print:shadow-none">
