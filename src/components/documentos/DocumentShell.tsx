@@ -14,7 +14,7 @@ export type DocumentShellProps = {
   logoAlt?: string;
   /** Escudo / arte só de marca d'água. `null` desliga. `undefined` = `/marca-dagua-excla.png` */
   watermarkSrc?: string | null;
-  /** Opacidade da marca d'água (0 a 1); padrão perceptível porém discreto */
+  /** Opacidade da marca d'água (0 a 1); padrão bem discreto para não competir com o texto */
   watermarkOpacity?: number;
   /** Proposta usava py-3 (12px); contrato py-[10px] — valores originais do HTML */
   footerPaddingClass?: string;
@@ -44,14 +44,14 @@ export function DocumentShell({
   logoSrc = "/logo-excla.png",
   logoAlt = "Exclã Soluções",
   watermarkSrc,
-  watermarkOpacity = 0.14,
+  watermarkOpacity = 0.08,
   footerPaddingClass = "py-3",
 }: DocumentShellProps) {
   const resolvedWatermark = resolveWatermarkSrc(watermarkSrc);
 
   return (
     <div
-      className="relative mx-auto my-5 box-border flex min-h-[29.7cm] w-[21cm] flex-col border-x-[8px] border-excla-dark bg-white shadow-[0_0_15px_rgba(0,0,0,0.1)]"
+      className="relative mx-auto my-5 box-border flex min-h-[29.7cm] w-[21cm] flex-col overflow-hidden border-x-[8px] border-excla-dark bg-white shadow-[0_0_15px_rgba(0,0,0,0.1)]"
       style={
         timbradoImageSrc
           ? {
@@ -64,17 +64,18 @@ export function DocumentShell({
     >
       {resolvedWatermark ? (
         <div
-          className="pointer-events-none absolute inset-0 z-0 overflow-hidden select-none"
+          className="pointer-events-none absolute inset-0 z-0 select-none overflow-hidden"
           aria-hidden
         >
+          {/* Canto inferior direito, contido na folha A4 (sem offsets negativos). */}
           <div
-            className="absolute -right-[6%] top-[14%] h-[62%] min-h-[10cm] w-[62%] max-w-[14cm]"
+            className="absolute bottom-[6%] right-3 max-h-[36%] w-[min(32%,9.5cm)] max-w-[9.5cm]"
             style={{ opacity: watermarkOpacity }}
           >
             <img
               src={resolvedWatermark}
               alt=""
-              className="h-full w-full object-contain object-center"
+              className="h-full w-full object-contain object-right object-bottom"
               decoding="async"
             />
           </div>
